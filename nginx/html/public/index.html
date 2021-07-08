@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<title>Leaflet</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
+		<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+
+	</head>
+	<body>
+
+		<div id="mapid" style="width: 600px; height: 400px;"></div>
+		<script>
+			var mymap = L.map('mapid').setView([35.67068501330238, 139.43023681640628], 13);
+			L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+							maxZoom: 12,
+							attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+							tileSize: 512,
+							zoomOffset: -1
+						}).addTo(mymap);
+			L.tileLayer('http://localhost:8080/image.php?zxy={z}{x}{y}', { zIndex: "9" }).addTo(mymap);
+			L.tileLayer('https://tokyo-ame2.jwa.or.jp/msk/{z}/{x}/{y}.gif', { zIndex: "10" }).addTo(mymap);
+			L.tileLayer('https://www.jma.go.jp/bosai/jmatile/data/map/none/none/none/surf/mask/{z}/{x}/{y}.png', { zIndex: "11" }).addTo(mymap);
+		</script>
+
+	</body>
+</html>
