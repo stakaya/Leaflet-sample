@@ -19,7 +19,7 @@
 							tileSize: 512,
 							zoomOffset: -1
 						}).addTo(mymap);
-			L.tileLayer('./image.php?zxy={z}{x}{y}', { zIndex: "9" }).addTo(mymap);
+			L.tileLayer('/image.php?zxy={z}{x}{y}', { zIndex: "9" }).addTo(mymap);
 			L.tileLayer('https://tokyo-ame2.jwa.or.jp/msk/{z}/{x}/{y}.gif', { zIndex: "10" }).addTo(mymap);
 			L.tileLayer('https://www.jma.go.jp/bosai/jmatile/data/map/none/none/none/surf/mask/{z}/{x}/{y}.png', { zIndex: "11" }).addTo(mymap);
 		</script>
